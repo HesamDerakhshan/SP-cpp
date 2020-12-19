@@ -1,39 +1,30 @@
 #include <iostream>
 using namespace std;
-//pointers to functions as parameters of another function
 
-int squere(int); //prototype of function
-int cube (int); //prototype of function
-int sum (int (*)(int),int); //prototype of function
-
+//dynamic memory   new, delete
 
 
 int main()
-{
-	cout<< sum(squere,3)<<endl;     //8
+{	int n;
+	cout <<"enter n"<<endl;
+	cin>>n;
+	
+	int *a;
+	a = new int[5];
+	
+	cout <<"enter n number "<<endl;
+	a[0]=0;
+	int s=0;
+	for (int i=0; i<n; i++)
+		cin>>a[i];
+		s += a[i];
+		
+	s=0;	
+	for (int j=0; j<n; j++)
+		s += a[j];
+	cout<<s<<endl;
+	delete []a;  //note delete []a;
 
-	cout<< sum(cube,2)<<endl;     //12
 	return 0;
 }
-
-// Function sum in first input arguments catch p pointer to a function
-// (like cube) which has one input argument. In secend input arguments
-// catch value of inputs of function(like sum).
-int sum(int(*p) (int) ,int a)
-{	int s = 0;
-	for(int i = 1; i <= a; i++)
-		s+=(*p)(i);
-	return s;
-}
-
-//-------squere----------
-int squere(int a)
-{
-	return a*a;
-}
-
-//-----cube----------
-int cube(int a)
-{
-	return a*a*a;
-}
+   
