@@ -1,2 +1,3 @@
 # c++ exercise     
-My c++ exercise of online c++ learning course Mr. Farshid Shirafkan
+My c++ exercise of online c++ learning course 
+Course teacher Mr. Farshid Shirafkan
