@@ -14,8 +14,8 @@ int main()
 	cout<< f(product,6,2)<<endl;     //12  
 	return 0;
 }
-// Function f in first input arguments catch a function(like sum) with p  
-// pointer which has two input argument. In secend and tirth input arguments
+// Function f in first input arguments catch  the pointer p to a function(like sum) 
+// which has two input argument. In secend and tirth input arguments
 // catch value of inputs of function(like sum).
 int f(int(*p)(int a,int b), int c,int d) 
 {

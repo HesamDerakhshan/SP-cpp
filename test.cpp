@@ -8,16 +8,16 @@ int product(int,int); //prototype of function
 
 
 int main()
-{   	
+{
 	cout<< f(sum,6,2)<<endl;     //8
-	
-	cout<< f(product,6,2)<<endl;     //12  
+
+	cout<< f(product,6,2)<<endl;     //12
 	return 0;
 }
-// Function f in first input arguments catch a function(like sum) with p  
+// Function f in first input arguments catch a function(like sum) with p
 // pointer which has two input argument. In secend and tirth input arguments
 // catch value of inputs of function(like sum).
-int f(int(*p)(int a,int b), int c,int d) 
+int f(int(*p)(int a,int b), int c,int d)
 {
 	return (*p)(c,d);
 }
@@ -32,4 +32,3 @@ int product(int a,int b)
 {
 	return a*b;
 }
-
