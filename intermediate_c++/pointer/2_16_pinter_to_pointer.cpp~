@@ -8,7 +8,7 @@
 /****************************************************************/
 
 
-// Course title: pointer to pointer
+// Course title: Merge two arrays 
 
 #include <iostream>
 using namespace std;
