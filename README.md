@@ -1,4 +1,4 @@
-# small projects in c++  
+# Small Projects in c++  
 This repo includes some small projects in C++ based on the course of Mr. Farshid Shirafkan.
 
 Basic and intermediate
