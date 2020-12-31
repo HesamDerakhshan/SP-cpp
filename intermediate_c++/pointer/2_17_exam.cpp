@@ -12,18 +12,16 @@
 
 #include <iostream>
 using namespace std;
+int   f(int **);
 
 int main()
 {
-	int nStudent;
-	cout << "number of student = " <<endl;
+	cout << "number of students = " <<end;
 	cin >> nStudent;
-	for(int i=0; i < nStudent; i++){
-		int exam;
-		cout << "number of exam for student = " <<endl;
+	for(int i=0; i < nStudent; i++)
+		cout << "number of exam for student = " <<end;
 		cin >> exam;
-		float avrage(exam);
-	}
+		avrage(exam);
   return 0;
 }
 
@@ -32,7 +30,7 @@ float avrage(int n){
 	float nomre;
 	float sum=0;
 	for(int i=0;i<n;i++)
-		cout<< "nomre = "<<endl;
+		cout<< "nomre = "<<end;
 		cin>>nomre;
 		sum += nomre;
 	return sum/n;

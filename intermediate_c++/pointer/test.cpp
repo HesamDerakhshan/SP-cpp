@@ -8,43 +8,32 @@
 /****************************************************************/
 
 
-// Course title: Merge two arrays 
+// Course title: pointer to pointer
 
 #include <iostream>
 using namespace std;
-int   f(int **);
 
 int main()
 {
-  int  *p;
-  int  k=0;
-  int  s=0;
-  
-  k = f(&p);
-  
-  for(int i=0;i<k;i++)
-       s+=p[i];
-       
-  cout<<"\n\n sum="<< s ;
-  
-  delete [] p;
-  
+	int nStudent;
+	cout << "number of -student = " <<endl;
+	cin >> nStudent;
+	for(int i=0; i < nStudent; i++){
+		int exam;
+		cout << "number of exam for student = " <<endl;
+		cin >> exam;
+		float avrage(exam);
+	}
   return 0;
 }
 
-int f(int **a)
-{
-	int n;
-	cout<<"\n\n enter n:";
-	cin>>n;
-	
-	*a=new int [n];
 
+float avrage(int n){
+	float nomre;
+	float sum=0;
 	for(int i=0;i<n;i++)
-	{
-	  cout<<"\n enter number "<< i+1 <<":";
-	  cin>>(*a)[i];
-    }
-
-    return n;
+		cout<< "nomre = "<<endl;
+		cin>>nomre;
+		sum += nomre;
+	return sum/n;
 }
