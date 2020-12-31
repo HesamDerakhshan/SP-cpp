@@ -19,7 +19,7 @@ int main()
 	float  **student;
 	int    *exam;
 
-	int n_student, count_stu;
+	int n_student, counter_stu;
 	cout<<"enter number student:";
 	cin >> n_student;
 
@@ -27,24 +27,24 @@ int main()
 	exam    = new  int    [n_student];  
 
 
-	for( count_stu =0 ; count_stu < n_student ; count_stu++ ){
-		cout << "\n\n\n enter number exam for student"<< count_stu+1 <<":";
-		cin  >> exam[count_stu];
+	for( counter_stu =0 ; counter_stu < n_student ; counter_stu++ ){
+		cout << "\n\n\n enter number exam for student"<< counter_stu+1 <<":";
+		cin  >> exam[counter_stu];
     	
-		student[count_stu] = new  float[exam[count_stu]];
+		student[counter_stu] = new  float[exam[counter_stu]];
     	
 		int sum=0;
-		for( int count_exam=0 ; count_exam < exam[count_stu] ; count_exam++){
-    	    cout << " nomreh " << count_exam+1 << ":";
-			cin  >> student[count_stu][count_exam];
-			sum += student[count_stu][count_exam];
+		for( int counter_exam=0 ; counter_exam < exam[counter_stu] ; counter_exam++){
+    	    cout << " nomreh " << counter_exam+1 << ":";
+			cin  >> student[counter_stu][counter_exam];
+			sum += student[counter_stu][counter_exam];
 		   }
-        cout<<"average= "<<(float) sum/ exam[count_stu];
+        cout<<"average= "<<(float) sum/ exam[counter_stu];
     }
  
     
-	for( count_stu=0 ; count_stu < n_student ; count_stu++)
-		delete [] student[count_stu];
+	for( counter_stu=0 ; counter_stu < n_student ; counter_stu++)
+		delete [] student[counter_stu];
       
 	delete [] student;
     delete [] exam;

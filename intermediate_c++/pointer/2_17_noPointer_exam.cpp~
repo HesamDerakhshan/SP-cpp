@@ -19,36 +19,37 @@ int main()
 	float  **student;
 	int    *exam;
 
-	int n_student, count_stu;
+	int n;
 	cout<<"enter number student:";
-	cin >> n_student;
+	cin >> n;
 
-	student = new  float *[n_student];
-	exam    = new  int    [n_student];  
+	student = new  float *[n];
+	exam    = new  int    [n];  
 
 
-	for( count_stu =0 ; count_stu < n_student ; count_stu++ ){
-		cout << "\n\n\n enter number exam for student"<< count_stu+1 <<":";
-		cin  >> exam[count_stu];
+	for( int i=0 ; i<n ; i++ ){
+		cout << "\n\n\n enter number exam for student"<< i+1 <<":";
+		cin  >> exam[i];
     	
-		student[count_stu] = new  float[exam[count_stu]];
+		student[i] = new  float[exam[i]];
     	
 		int sum=0;
-		for( int count_exam=0 ; count_exam < exam[count_stu] ; count_exam++){
-    	    cout << " nomreh " << count_exam+1 << ":";
-			cin  >> student[count_stu][count_exam];
-			sum += student[count_stu][count_exam];
+		for( int j=0 ; j<exam[i] ; j++){
+    	    cout << " nomreh " << j+1 << ":";
+			cin  >> student[i][j];
+			s += student[i][j];
 		   }
-        cout<<"average= "<<(float) sum/ exam[count_stu];
+        cout<<"average= "<<(float) s/ exam[i];
     }
  
     
-	for( count_stu=0 ; count_stu < n_student ; count_stu++)
-		delete [] student[count_stu];
+	for( i=0 ; i<n ; i++)
+		delete [] student[i];
       
 	delete [] student;
-    delete [] exam;
-  return 0;
+	delete [] exam;
+	
+	return 0;
 }
 
 
