@@ -8,26 +8,31 @@
 /****************************************************************/
 
 
-// Course title: Reference in function  
+// Course title: difference between Reference and pointer
 
 #include <iostream>
 using namespace std;
 
-
-int &f(int i);
-int a[3] = {1,2,3};
-
 int main()
 {
-	f(1) = 5;
+	int a = 3;
 
-	cout << a[0] << endl;
-	cout << a[1] << endl;
-	cout << a[2] << endl;
-		
+	int &r = a;
+	a = 5;
+
+	cout << r << endl;
+	
+	int b = 1;
+	r = b;
+	
+	cout << r << endl;
+	cout << a << endl;
+	
+	r++;
+	
+	cout << a << endl;
+	cout << b << endl;
+	cout << r << endl;
   return 0;
 }
 
-int &f(int i){
-	return a[i];
-} 

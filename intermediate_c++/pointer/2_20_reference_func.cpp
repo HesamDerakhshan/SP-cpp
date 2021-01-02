@@ -8,26 +8,24 @@
 /****************************************************************/
 
 
-// Course title: Reference in function  
+// Course title: Reference in function 
 
 #include <iostream>
 using namespace std;
 
-
-int &f(int i);
-int a[3] = {1,2,3};
+void f(int &);
 
 int main()
 {
-	f(1) = 5;
+	int a = 3;
 
-	cout << a[0] << endl;
-	cout << a[1] << endl;
-	cout << a[2] << endl;
+	f(a);	
+
+	cout << a << endl; // 4
 		
   return 0;
 }
 
-int &f(int i){
-	return a[i];
-} 
+void f(int &r){
+	r++;
+}

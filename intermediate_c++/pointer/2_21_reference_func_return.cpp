@@ -8,26 +8,25 @@
 /****************************************************************/
 
 
-// Course title: Reference in function  
+// Course title: Reference in return function  
 
 #include <iostream>
 using namespace std;
 
+void f(int &);
 
-int &f(int i);
-int a[3] = {1,2,3};
+char s[20] = "Hesam Derakhshan.";
+char &f(int);
 
 int main()
 {
-	f(1) = 5;
+	f(5) = ',';	 // s[5]=','
 
-	cout << a[0] << endl;
-	cout << a[1] << endl;
-	cout << a[2] << endl;
+	cout << s << endl;
 		
   return 0;
 }
 
-int &f(int i){
-	return a[i];
-} 
+char &f(int i){
+	return s[i];
+}
