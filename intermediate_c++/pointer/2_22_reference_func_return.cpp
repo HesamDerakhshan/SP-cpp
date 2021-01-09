@@ -19,11 +19,11 @@ int a[3] = {1,2,3};
 
 int main()
 {
-	f(1) = 50;
+	f(1) = 50;       // a[1]=50
 
-	cout << a[0] << endl;
-	cout << a[1] << endl;
-	cout << a[2] << endl;
+	cout << a[0] << endl;  // 1
+	cout << a[1] << endl;  // 50
+	cout << a[2] << endl;  // 3
 		
   return 0;
 }

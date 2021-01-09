@@ -26,7 +26,6 @@ int main()
 	a = new int [len];
 
 	srand( (unsigned)time(NULL)); // change random numbers in each run (if you comment this line Then the random numbers become the same)
-	
 	for( i=0; i < len; ++i) 			
 		a[i] = rand()%3000;     // generate a random number between 0-30 
 	
