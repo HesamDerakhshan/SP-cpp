@@ -8,30 +8,35 @@
 /****************************************************************/
 
 
-// Course title: // enum
+// Course title: structure
 
 #include <iostream>
 //#include <curses.h>
 
 using namespace std;
 
+typedef  enum { Zero, One, Two, Three, Four } a;
+a x;  // a is a enum type varible
 
+void  f( a ); //input of func is enum
+
+a     g() ;  //output of func is enum
 
 int main()
 {	
-	enum x{a , b ,c };	
-	
-	int x = 8;	   // OK: hide enum
-//	int a = 5;     // Error  
+	f(Two);
+	cout << g();	
 
-	cout << x <<endl; 
-	{
-		int a =10; // OK: inner scope can hide outer a
-		
-		cout <<"inner scope a = "<< a <<endl;  //10
-	}
-		
-	cout <<"outer scope a = "<< a <<endl;	   // 0
 	return 0;
+}
+
+void f(a v)
+{
+	x = v;
+}
+
+a g() 
+{
+	return x;
 }
 

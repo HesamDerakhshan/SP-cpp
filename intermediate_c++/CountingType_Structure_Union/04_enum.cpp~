@@ -8,35 +8,30 @@
 /****************************************************************/
 
 
-// Course title: // enum function
+// Course title: // enum
 
 #include <iostream>
 //#include <curses.h>
 
 using namespace std;
 
-typedef  enum { Zero, One, Two, Three, Four } a;
-a x;  // a is a enum type varible
 
-void  f( a ); //input of func is enum
-
-a     g() ;  //output of func is enum
 
 int main()
 {	
-	f(Two);
-	cout << g();	
-
+	// enum x { a , b , c , d , e } v1 , v2;	
+	
+	typedef enum { a , b , c , d , e } x;	
+	x v1,v2;
+	
+	v1 = a;
+	v1 = e;
+	
+	for ( int i = v1; i < v2; i++)
+	{
+	cout << i <<endl;	
+	}	
+		   // 0
 	return 0;
-}
-
-void f(a v)
-{
-	x = v;
-}
-
-a g() 
-{
-	return x;
 }
 
