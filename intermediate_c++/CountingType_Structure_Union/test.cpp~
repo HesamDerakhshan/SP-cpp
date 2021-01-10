@@ -4,37 +4,34 @@
 /***  Chapter: pointer                                        ***/
 /***  Section: 3                                              ***/
 /***  Copyleft H. E. Derakhshan 2020, All lefts reserved!     ***/
-/***  Date: 09/01/2021                                        ***/
+/***  Date: 01/10/2021                                        ***/
 /****************************************************************/
 
 
 // Course title: // enum
 
 #include <iostream>
+//#include <curses.h>
 
-/* example
 using namespace std;
 
-enum color {RED , GREEN , BLUE , BLACK , ORANGE}
 
-enum Time {SECOND , MINUTE , HOUR}
-
-enum Date {DAY , MOUNTH , YEAR}
-
-enum Gender {MALE , FEMALE , OTHER}
-
-enum Sign {neg = -1 , zero = 0 , pos = 1 }
-*/
 
 int main()
 {	
-	enum Day {Sat , Sun , Mon , Tues , We} 	
+	enum x{a , b ,c };	
 	
-	cout<< Sat <<end;
-	cout<< Tues + Mon <<end;
-	cout<< Fri - Sat <<end;
-	cout<< Wednes / Mon <<end;
-	
+	int x = 8;	   // OK: hide enum
+//	int a = 5;     // Error  
+
+	cout << x <<endl; 
+	{
+		int a =10; // OK: inner scope can hide outer a
+		
+		cout <<"inner scope a = "<< a <<endl;
+	}
+		
+	cout <<"outer scope a = "<< a <<endl;	
 	return 0;
 }
 

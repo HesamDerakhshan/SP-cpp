@@ -1,8 +1,7 @@
 #!/bin/bash
 
 clear
-g++ -o test.out test.cpp #compile
-# -std=c++1z -Ofast #for fast compile
+g++ -o test.out test.cpp  -std=c++17 -O2 #compile
 echo "test.out"
 
 ./test.out

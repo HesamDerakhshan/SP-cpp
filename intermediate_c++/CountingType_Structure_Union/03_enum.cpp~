@@ -28,10 +28,10 @@ int main()
 	{
 		int a =10; // OK: inner scope can hide outer a
 		
-		cout <<"inner scope a = "<< a <<endl;  //10
+		cout <<"inner scope a = " a <<endl;
 	}
 		
-	cout <<"outer scope a = "<< a <<endl;	   // 0
+	cout <<"outer scope a = " a <<endl;	
 	return 0;
 }
 
