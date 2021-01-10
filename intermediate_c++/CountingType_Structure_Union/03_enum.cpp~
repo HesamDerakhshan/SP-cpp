@@ -19,19 +19,10 @@ using namespace std;
 
 int main()
 {	
-	enum x{a , b ,c };	
+	enum x{A, B , C };	
 	
-	int x = 8;	   // OK: hide enum
-//	int a = 5;     // Error  
+	enum y {c, d , e };	  // Error due to the use of the c in x and y
 
-	cout << x <<endl; 
-	{
-		int a =10; // OK: inner scope can hide outer a
-		
-		cout <<"inner scope a = " a <<endl;
-	}
-		
-	cout <<"outer scope a = " a <<endl;	
 	return 0;
 }
 

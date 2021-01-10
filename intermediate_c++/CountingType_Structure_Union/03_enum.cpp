@@ -8,7 +8,7 @@
 /****************************************************************/
 
 
-// Course title: // enum
+// Course title: enum
 
 #include <iostream>
 //#include <curses.h>

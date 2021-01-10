@@ -19,19 +19,19 @@ using namespace std;
 
 int main()
 {	
-	// enum x { a , b , c , d , e } v1 , v2;	
+	enum x{a , b ,c };	
 	
-	typedef enum { a , b , c , d , e } x;	
-	x v1,v2;
-	
-	v1 = a;
-	v1 = e;
-	
-	for ( int i = v1; i < v2; i++)
+	int x = 8;	   // OK: hide enum
+//	int a = 5;     // Error  
+
+	cout << x <<endl; 
 	{
-	cout << i <<endl;	
-	}	
-		   // 0
+		int a =10; // OK: inner scope can hide outer a
+		
+		cout <<"inner scope a = "<< a <<endl;  //10
+	}
+		
+	cout <<"outer scope a = "<< a <<endl;	   // 0
 	return 0;
 }
 

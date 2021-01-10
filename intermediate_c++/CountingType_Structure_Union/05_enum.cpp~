@@ -19,9 +19,17 @@ using namespace std;
 
 int main()
 {	
-	enum x{A, B , C };	
+	// enum x { a , b , c , d , e } v1 , v2;	
 	
-	enum y {c, d , e };	  // Error due to the use of the c in x and y
+	typedef enum { a=10 , b , c , d , e } x;	
+	x v1,v2;
+	
+	v1 = a;
+	v2 = e;
+	cout << v1 <<endl;	for ( int i = v1; i <= v2; i++){
+		cout << i <<endl;	
+
+	}	
 
 	return 0;
 }
