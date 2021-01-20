@@ -5,7 +5,7 @@
 //  Date:            01/10/2021
 //  Copyleft H. E. Derakhshan 2020, All lefts reserved!                                        
 //------------------------------------------------------------------------------
-//  Course title: pointer to structure
+//  Course title: array of  structure
 //------------------------------------------------------------------------------
 //libraries
 #include <iostream>
@@ -14,30 +14,33 @@
 using namespace std;
 //------------------------------------------------------------------------------
 
+const int SIZE = 2;
 
-struct  Time{
+struct book{
    
-   int   h,m,s;
+   int   book_serial;
+   float   cost;
 };
-
 int main()
 {	
-	Time t1,t2;                 // array of structure
-	t1.h = 7;
-	t1.m = 0;
-    t1.s = 0;
+	int i;
+	book a[SIZE];                 // array of structure
+
     
-    t2 = t1;
-    
-    t2.h++;
-    
-    cout << "Clock: "<< t2.h <<endl;
-    
-    Time *p;  // pointer to structure
-    p = &t2;
-    
-    cout << "Clock: "<< p->h <<endl;
-    cout << "Clock: "<< (*p).h<<endl;
+    for(i = 0; i < SIZE; i++){
+		cout <<endl;
+		cout <<"Enter book serial: " ;
+		cin >> a[i].book_serial;
+	
+		cout<<"Enter cost: ";
+		cin >> a[i].cost;
+		}
+		
+	for(int k=0; k<SIZE; k++){
+   		cout << "Book Serial: "<<a[k].book_serial <<"  ";
+		cout << "Book cost: "<<a[k].cost <<"  ";
+		cout << endl << endl;
+	}
 	return 0;
 }
 

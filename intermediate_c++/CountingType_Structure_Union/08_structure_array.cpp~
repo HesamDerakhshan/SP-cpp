@@ -5,7 +5,7 @@
 //  Date:            01/10/2021
 //  Copyleft H. E. Derakhshan 2020, All lefts reserved!                                        
 //-----------------------------------------------------
-// Course title: structure
+// Course title: array of  structure
 //-----------------------------------------------------
 //libraries
 #include <iostream>
@@ -19,40 +19,53 @@ struct student{
    char  name[20] ;
    int   grade[3] ;
    int   student_number[1];
-};
+}s[2];
 int main()
 {	
-	struct student s;
+//	struct  student s;
+//	s = [2];
 	
-	strcpy(s.name ,"Hesam");  // copy string "Hesam"  to s.name
+	strcpy(s[0].name ,"Hesam");  // copy string "Hesam"  to s.name
+	strcpy(s[1].name ,"kimiya");  // copy string "kimiya"  to s.name
 	
-	s.grade[0] = 20;
-    s.grade[1] = 17;
-    s.grade[2] = 18;
+	s[0].grade[0] = 20;
+    s[0].grade[1] = 17;
+    s[0].grade[2] = 18;
+	
+	s[1].grade[0] = 20;
+    s[1].grade[1] = 15;
+    s[1].grade[2] = 14;
+	
+	    
+    s[0].student_number[0] = 971141;
+    s[1].student_number[0] = 971112;
     
-    s.student_number[0] = 971141;
-	cout <<"name  : "  << s.name <<endl;
-	cout <<"student number  : "  << s.student_number[0] <<endl;
+    for(int i = 0; i < 2;i++){
+		cout <<"name  : "  << s[i].name <<endl;
+		cout <<"student number  : "  << s[i].student_number[0] <<endl;
 	
-	cout<<"grade : ";
-	for(int k=0; k<=2; k++)
-	   cout << s.grade[k] <<"  ";	
-
+		cout<<"grade : ";
+		
+		for(int k=0; k<=2; k++)
+	   		cout << s[i].grade[k] <<"  ";
+		cout << endl << endl;;
+	}
 	return 0;
 }
 
 /*
 int main()
 {
-	char   name[20] = "Hesam Derakhshan";
-	int    grade[3] = { 20, 17, 18};
-
+	char   name[2][20] = {"Hesam", "kimiya"};
+	int    grade[2][3] = {{ 20, 17, 18}{20, 15, 14}};
+	
+	for(int i=0; i< 2;i++){
 	cout <<"name  : "  << name<<endl;
 	
 	cout<<"grade : ";
 	for(int k=0; k<=2; k++)
 	   cout << grade[k] <<"  ";
-	   
+   }
   getch();
 }
 */

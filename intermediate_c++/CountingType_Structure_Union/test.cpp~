@@ -1,60 +1,48 @@
-//-----------------------------------------------------
+//------------------------------------------------------------------------------
 //  Exercise of learning c++ course                       
 //  Course teacher:  Mr. Shirafkan                         
 //  Chapter:         structure 
 //  Date:            01/10/2021
 //  Copyleft H. E. Derakhshan 2020, All lefts reserved!                                        
-//-----------------------------------------------------
-// Course title: structure
-//-----------------------------------------------------
+//------------------------------------------------------------------------------
+//  Course title: pointer to structure
+//------------------------------------------------------------------------------
 //libraries
 #include <iostream>
 #include <curses.h>
 #include <string.h>
 using namespace std;
-//-----------------------------------------------------
-
-/*
-int main()
-{
-	char   name[20] = "Ali shirafkan";
-	int    grade[3] = { 20, 17, 18};
-
-	cout <<"name  : "  << name<<endl;
-	
-	cout<<"grade : ";
-	for(int k=0; k<=2; k++)
-	   cout << grade[k] <<"  ";
-	   
-  getch();
-}
-*/
+//------------------------------------------------------------------------------
 
 
-struct student{
-   char  name[20] ;
-   int   grade[3] ;
-   int   student_number[1];
+struct  Time{
+   
+   int   h,m,s;
 };
+
 int main()
 {	
-	struct student s;
-	
-	strcpy(s.name ,"Hesam");  // copy string "Hesam"  to s.name
-	
-	s.grade[0] = 20;
-    s.grade[1] = 17;
-    s.grade[2] = 18;
+	Time t1,t2;                 // array of structure
+	t1.h = 7;
+	t1.m = 0;
+    t1.s = 0;
     
-    s.student_number[0] = 971141;
-	cout <<"name  : "  << s.name <<endl;
-	cout <<"student number  : "  << s.student_number[0] <<endl;
-	
-	cout<<"grade : ";
-	for(int k=0; k<=2; k++)
-	   cout << s.grade[k] <<"  ";	
-
+    t2 = t1;
+    
+    t2.h++;
+    
+    cout << "Clock: "<< t2.h <<endl;
+    
+    Time *p;  // pointer to structure
+    p = &t2;
+    
+    cout << p->h <<endl;
+    cout << (*p).h<<endl;
 	return 0;
 }
+
+
+
+
 
 

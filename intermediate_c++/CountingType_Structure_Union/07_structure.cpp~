@@ -44,7 +44,7 @@ int main()
 /*
 int main()
 {
-	char   name[20] = "Hesam Derakhshan";
+	char   name[20] = "Ali shirafkan";
 	int    grade[3] = { 20, 17, 18};
 
 	cout <<"name  : "  << name<<endl;
