@@ -15,34 +15,24 @@
 using namespace std;
 //------------------------------------------------------
 
-struct Student {
-	int    id;
- };
-
-void  f (Student  );  // function get structure
-void  g (Student *);  // function get pointer to structure
-void  h (Student &);  // function get refrence of structure
-
-int main(){
-
-	 Student s[8];
-	  
-	 s[0].id = 1;
-
-	 f( s[0]);                  // function call by value
-	 cout << s[0].id << "\n";   // 1
-
-	 g(&s[0]);                  // function call by pointer
-	 cout << s[0].id << "\n";   // 4
-
-	 h( s[0]);                  // function call by refrence
-	 cout << s[0].id << "\n";   // 7
+struct mystruct
+{
+       int x;
+       int y;
+};
+ 
+int main()
+{
+  mystruct s,d;  
+  s.x = 2;
+  s.y = 6;
+  
+  memcpy( &d , &s , sizeof(s) ); //copy s to d
+  
+  cout << d.x << endl;   //2
+  cout << d.y << endl;   //6
 	 
 	 return 0;
 }
   
-void  f(Student  a) { a.id  += 3;  }
 
-void  g(Student *p) { p->id += 3;  }
-
-void  h(Student &r) { r.id  += 3;  }
