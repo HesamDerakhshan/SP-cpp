@@ -6,8 +6,7 @@
 //  Author :          Hesam E. Derakhshan                                       
 //=====================================================
 
-//  Course title: union(like stract but union can hold only one of its non-static data members at a time.)
-//  The union is only as big as necessary to hold its largest data member.
+//  Course title: structure inside structure
 //-----------------------------------------------------
 //libraries
 #include <iostream>
@@ -16,24 +15,33 @@
 using namespace std;
 //------------------------------------------------------
 
-struct  a{
-   char  *b;
-   long   c;
-   union  d{
-   	  int   e;
-   	  char  f;
-   }u;
-}s;
+struct Name {
+  char firstname[80];
+  char lastname[80];
+  void show() { cout << firstname << " " << lastname << endl; };     
+};
+
+
+struct Date {
+  int   day;
+  int   month;
+  int   year;
+  void  show() {cout << month << "/" << day << "/" << year << endl;}  
+};
+
+struct Person {
+  Name   n;
+  Date   b;
+  void   show() { cout << endl; n.show(); cout << "Brithday: "; b.show();}
+};
+
+
 
 int main()
 {
-  s.c=123;
-  
-  s.u.e=65;
-  
-  cout<<s.u.e;  // 65 
-  cout<<s.u.f;  // A
-  
+  Person h = { { "Hesam", "Derakhshan" } , {1, 4, 1998 }  };
+
+  h.show();
 	 return 0;
 }
   

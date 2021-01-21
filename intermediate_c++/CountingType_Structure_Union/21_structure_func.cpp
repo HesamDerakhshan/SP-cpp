@@ -6,8 +6,7 @@
 //  Author :          Hesam E. Derakhshan                                       
 //=====================================================
 
-//  Course title: union(like stract but union can hold only one of its non-static data members at a time.)
-//  The union is only as big as necessary to hold its largest data member.
+//  Course title: function inside structure( usually in this situation using class an and object )
 //-----------------------------------------------------
 //libraries
 #include <iostream>
@@ -16,24 +15,17 @@
 using namespace std;
 //------------------------------------------------------
 
-struct  a{
-   char  *b;
-   long   c;
-   union  d{
-   	  int   e;
-   	  char  f;
-   }u;
-}s;
+struct  s {
+	double  a;
+ 	void    f(int x)   { a=x; }
+ 	int     g(void)    { int y;   y=a*a;  return (y); }
+ } m;
 
-int main()
+
+int main( )
 {
-  s.c=123;
-  
-  s.u.e=65;
-  
-  cout<<s.u.e;  // 65 
-  cout<<s.u.f;  // A
-  
+ m.f(4);             // a=4
+ cout << m.g( );     // 16
 	 return 0;
 }
   
