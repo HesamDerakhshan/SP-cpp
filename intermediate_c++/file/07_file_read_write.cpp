@@ -6,32 +6,35 @@
 //  Author :          Hesam E. Derakhshan                                       
 //=====================================================
 
-//  Course title: size of file
+//  Course title: read write record (array struct)
 //-----------------------------------------------------
 //libraries
 #include <iostream>
 #include <curses.h>
 #include <fstream>
-#include <iomanip>
 using namespace std;
 //------------------------------------------------------
 
-int main () 
-{
-	int  a[4]={5,7,8,1};
-	
-	// write file
-    ofstream f1( "x" , ios::binary );
-    f1.write( (char *)a, sizeof(a)) ;
-    f1.close();
-   
-    // read file from end(ios::ate = get pointer position from end by default)
-	ifstream f2 ("x", ios::binary|ios::ate);
-    cout<< f2.tellg();  // 16
-    
-    f2.close();
 
-		
+int main(){
+  
+	int len = 5;
+	int  array[len]={10,11,12,13,14};  
+		                      
+	ofstream f1("a.dat", ios::binary);  
+		                      
+	f1.write( (char *)array , len * sizeof(array) );   // (char *)array = convert array to char pointer.   len * sizeof(array)= 5 * 4 = 20
+
+	f1.close();                
+
+	int  a[len];   
+	ifstream f2("a.dat", ios::binary);  
+
+	f2.read( (char *)a, 20 );    // (char *)a = convert a array to char pointer.   len * sizeof(array)= 5 * 4 = 20
+
+	for(int i=0;i<5;i++)
+		cout<<a[i] <<"  ";
+
 	return 0;
 }
   

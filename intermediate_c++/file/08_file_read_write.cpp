@@ -6,7 +6,7 @@
 //  Author :          Hesam E. Derakhshan                                       
 //=====================================================
 
-//  Course title: size of file
+//  Course title: read write record (array struct)
 //-----------------------------------------------------
 //libraries
 #include <iostream>
@@ -16,21 +16,32 @@
 using namespace std;
 //------------------------------------------------------
 
-int main () 
-{
-	int  a[4]={5,7,8,1};
-	
-	// write file
-    ofstream f1( "x" , ios::binary );
-    f1.write( (char *)a, sizeof(a)) ;
-    f1.close();
-   
-    // read file from end(ios::ate = get pointer position from end by default)
-	ifstream f2 ("x", ios::binary|ios::ate);
-    cout<< f2.tellg();  // 16
-    
-    f2.close();
+struct student { 
+	char  name[10]; 
+	int   id; 
+};
 
+int main() 
+{
+	student a[3] ={ {"Ali ",18} , {"Taha",19} , {"Sara",20} };
+    student b[3];
+    
+	ofstream f1( "x" , ios::binary );
+	for( int i = 0 ; i <=2 ; ++i)
+        f1.write( (char *)& a[i] , sizeof(student)) ;
+	
+    f1.close();
+    
+    
+	cout<<"\n output: \n\n";
+	
+	ifstream f2( "x" , ios::binary );
+    for( int i = 0 ; i <=2 ; ++i)
+    {
+        f2.read( (char*)& b[i] , sizeof(student)) ;
+	    cout << b[i].name << setw(5) << b[i].id << endl;    
+	}
+	f2.close();
 		
 	return 0;
 }

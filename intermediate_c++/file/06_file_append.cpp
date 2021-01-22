@@ -6,32 +6,38 @@
 //  Author :          Hesam E. Derakhshan                                       
 //=====================================================
 
-//  Course title: size of file
+//  Course title: append
 //-----------------------------------------------------
 //libraries
 #include <iostream>
 #include <curses.h>
 #include <fstream>
-#include <iomanip>
 using namespace std;
 //------------------------------------------------------
 
-int main () 
-{
-	int  a[4]={5,7,8,1};
-	
-	// write file
-    ofstream f1( "x" , ios::binary );
-    f1.write( (char *)a, sizeof(a)) ;
-    f1.close();
-   
-    // read file from end(ios::ate = get pointer position from end by default)
-	ifstream f2 ("x", ios::binary|ios::ate);
-    cout<< f2.tellg();  // 16
-    
-    f2.close();
 
-		
+int main(){
+	char s[80];
+	char ch;   
+
+	ifstream f1("a");
+	if (f1)
+	{
+	  while (f1.get(ch))
+		 cout << ch;
+	}
+	f1.close();
+
+
+
+	ofstream  f2("a" , ios::app);
+	if (!f2)  return(1);
+	cout << "\nEnter : ";
+	cin >> s;
+	f2 << s << "\n";
+	f2.close();
+
+	
 	return 0;
 }
   
